@@ -3,6 +3,21 @@
 [![Out-of-tree build & tests](https://github.com/KhronosGroup/SPIRV-LLVM-Translator/workflows/Out-of-tree%20build%20&%20tests/badge.svg?branch=main&event=schedule)](https://github.com/KhronosGroup/SPIRV-LLVM-Translator/actions?query=workflow%3A%22Out-of-tree+build+%26+tests%22+event%3Aschedule)
 [![In-tree build & tests](https://github.com/KhronosGroup/SPIRV-LLVM-Translator/workflows/In-tree%20build%20&%20tests/badge.svg?branch=main&event=schedule)](https://github.com/KhronosGroup/SPIRV-LLVM-Translator/actions?query=workflow%3A%22In-tree+build+%26+tests%22+event%3Aschedule)
 
+
+
+## 如何编译?
+
+### Windows
+
+```bash
+mkdir build
+cd build
+cmake .. -G "Visual Studio 15 2017 Win64" -DBASE_LLVM_VERSION=10.0.0
+msbuild /maxcpucount:4 /p:Configuration=Release /p:PreferredToolArchitecture=x64 ALL_BUILD.vcxproj -t:rebuild
+```
+
+
+
 This repository contains source code for the LLVM/SPIR-V Bi-Directional Translator, a library and tool for translation between LLVM IR and [SPIR-V](https://www.khronos.org/registry/spir-v/).
 
 The LLVM/SPIR-V Bi-Directional Translator is open source software. You may freely distribute it under the terms of the license agreement found in LICENSE.txt.
